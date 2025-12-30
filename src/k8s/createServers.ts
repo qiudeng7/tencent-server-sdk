@@ -2,6 +2,10 @@ import type { TencentCloudCredential } from '#src/request'
 import { runInstances } from '#src/api/instance/runInstances'
 import type { RunInstancesParams } from '#src/api/instance/runInstances'
 
+// prepareScript这样导入进来就是字符串
+// 参考 https://cn.vite.dev/guide/assets#importing-asset-as-string
+import prepareScript from '../../prepare.sh?raw'
+
 // ============================================================================
 // 类型定义
 // ============================================================================
@@ -58,8 +62,8 @@ const DEFAULT_K8S_SERVER_CONFIG = {
   },
   /** 主机名 */
   HostName: 'tencent-server-sdk-for-k8s',
-  /** 用户数据（base64 编码） */
-  UserData: 'TXlVc2VyRGF0YQo=', // base64 编码的 "MyUserData"
+  /** 用户数据（base64 编码的 prepare.sh） */
+  UserData: btoa(prepareScript),
   /** 是否只预检请求 */
   DryRun: false
 }
@@ -80,7 +84,7 @@ function generateSuffix(): string {
  *
  * 使用默认配置创建腾讯云服务器，同时允许用户通过传入 runInstances 参数覆盖默认配置
  * 
- * 默认配置是创建最便宜的竞价式服务器，暂时并没有支持动态查询最便宜的服务器。
+ * 默认配置是创建最便宜的竞价式服务器，并自动安装docker, kubelet,kubectl等，暂时并没有支持动态查询最便宜的服务器。
  *
  * @param credential - 腾讯云密钥凭证
  * @param params - 创建参数（与 runInstances 参数格式相同，会与默认配置合并）
