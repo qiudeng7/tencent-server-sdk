@@ -17,3 +17,10 @@ export { describeCommands } from './tat/describeCommands'
 export { describeInvocations } from './tat/describeInvocations'
 export { describeInvocationTasks } from './tat/describeInvocationTasks'
 export { invokeCommand } from './tat/invokeCommand'
+
+// ============================================================================
+// Types
+// ============================================================================
+
+export type { TencentCloudCredential } from './utils/accessKey'
+
