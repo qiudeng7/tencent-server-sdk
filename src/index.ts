@@ -19,6 +19,14 @@ export { describeInvocationTasks } from '#src/api/tat/describeInvocationTasks'
 export { invokeCommand } from '#src/api/tat/invokeCommand'
 
 // ============================================================================
+// VPC APIs
+// ============================================================================
+
+export { createVpc } from '#src/api/vpc/createVpc'
+export { deleteVpc } from '#src/api/vpc/deleteVpc'
+export { describeVpcs } from '#src/api/vpc/describeVpcs'
+
+// ============================================================================
 // Types
 // ============================================================================
 
