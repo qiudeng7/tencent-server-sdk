@@ -3,21 +3,14 @@
   "version": "0.0.1",
   "description": "Tencent Cloud API SDK for CVM instances and TAT commands",
   "type": "module",
-  "main": "./dist/tencent-cloud-sdk.cjs",
+  "main": "./dist/tencent-cloud-sdk.cjs.js",
   "module": "./dist/tencent-cloud-sdk.es.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./src/index.ts",
-      "import": "./src/index.ts"
-    },
-    "./src/utils/accessKey": {
-      "types": "./src/utils/accessKey.ts",
-      "import": "./src/utils/accessKey.ts"
-    },
-    "./src/*": {
-      "types": "./src/*.ts",
-      "import": "./src/*.ts"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/tencent-cloud-sdk.es.js",
+      "require": "./dist/tencent-cloud-sdk.cjs.js"
     }
   },
   "files": [
