@@ -157,7 +157,7 @@ export function createRequest(
       body,
     })
 
-    const result: TencentCloudResponse<R> = await response.json()
+    const result = await response.json() as TencentCloudResponse<R>
 
     // 检查错误
     if (result.Response.Error) {
