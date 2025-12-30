@@ -1,0 +1,42 @@
+{
+  "name": "@qiudeng/tencent-cloud-sdk",
+  "version": "0.0.1",
+  "description": "Tencent Cloud API SDK for CVM instances and TAT commands",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "prepublishOnly": "pnpm run build"
+  },
+  "keywords": [
+    "tencent-cloud",
+    "cvm",
+    "tat",
+    "sdk",
+    "api"
+  ],
+  "author": "qiudeng",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qiudeng/tencent-cloud-sdk.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
