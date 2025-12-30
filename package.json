@@ -1,6 +1,6 @@
 {
   "name": "@qiudeng/tencent-cloud-sdk",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Tencent Cloud API SDK for k8s usage",
   "type": "module",
   "main": "./dist/tencent-cloud-sdk.cjs.js",
@@ -16,6 +16,10 @@
   "files": [
     "dist"
   ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "browser": "unbuildable",
   "scripts": {
     "build": "vite build",
     "dev": "vite build --watch",

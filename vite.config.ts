@@ -25,7 +25,7 @@ export default defineConfig({
       formats: ['es', 'cjs']
     },
     rollupOptions: {
-      external: [],
+      external: ['crypto', 'node:crypto'],
       output: {
         globals: {}
       }
