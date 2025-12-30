@@ -23,7 +23,8 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite build --watch",
-    "prepublishOnly": "pnpm run build"
+    "prepublishOnly": "pnpm run build",
+    "docs": "typedoc"
   },
   "keywords": [
     "tencent-cloud",
@@ -42,6 +43,7 @@
     "access": "public"
   },
   "devDependencies": {
+    "typedoc": "^0.28.15",
     "typescript": "^5.0.0",
     "vite": "^5.0.0",
     "vite-plugin-dts": "^3.7.0"

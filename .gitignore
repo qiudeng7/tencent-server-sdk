@@ -1,5 +1,6 @@
 node_modules
 dist
+docs-html
 *.log
 .DS_Store
 .env

@@ -18,6 +18,8 @@ export type CreateK8sServersParams = RunInstancesParams
 
 /**
  * 创建 K8s 服务器的结果
+ *
+ * @category K8s Helpers
  */
 export interface CreateK8sServersResult {
   /** 实例 ID 列表 */
