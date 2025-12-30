@@ -1,6 +1,6 @@
 {
   "name": "@qiudeng/tencent-cloud-sdk",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Tencent Cloud API SDK for k8s usage",
   "type": "module",
   "main": "./dist/tencent-cloud-sdk.cjs.js",

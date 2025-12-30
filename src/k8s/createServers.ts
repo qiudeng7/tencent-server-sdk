@@ -53,6 +53,15 @@ const DEFAULT_K8S_SERVER_CONFIG = {
     /** 系统盘大小（GB） */
     DiskSize: 20
   },
+  /** 公网带宽相关信息设置 */
+  InternetAccessible: {
+    /** 网络计费类型 */
+    InternetChargeType: 'TRAFFIC_POSTPAID_BY_HOUR',
+    /** 公网出带宽上限，单位：Mbps */
+    InternetMaxBandwidthOut: 200,
+    /** 是否分配公网IP */
+    PublicIpAssigned: true
+  },
   /** 实例名称 */
   InstanceName: '@qiudeng/tencent-server-sdk-for-k8s-',
   /** 登录设置 */
