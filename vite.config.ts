@@ -15,6 +15,8 @@ export default defineConfig({
   plugins: [
     dts({
       insertTypesEntry: true,
+      includeImplicit: true,
+      rollupTypes: true,
     }),
   ],
   build: {
