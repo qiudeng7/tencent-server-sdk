@@ -210,6 +210,7 @@ interface RunInstancesResponseData {
 /**
  * 创建一个或多个指定配置的实例
  *
+ * @group Instance APIs
  * @param credential - 腾讯云密钥凭证
  * @param params - 实例配置参数
  * @returns 包含 InstanceIdSet 和 RequestId 的对象

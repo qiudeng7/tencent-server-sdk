@@ -43,6 +43,7 @@ interface CreateCommandResponseData {
 /**
  * 创建 TAT 命令
  *
+ * @group TAT APIs
  * @param credential - 腾讯云密钥凭证
  * @param params - 命令参数
  * @returns 包含 CommandId 和 RequestId 的对象

@@ -5,6 +5,7 @@ import type { TencentCloudCredential } from '#src/request'
 // ============================================================================
 
 /**
+ * @group VPC APIs
  * 过滤器对象
  */
 interface Filter {

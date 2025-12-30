@@ -5,6 +5,7 @@ import type { TencentCloudCredential } from '#src/request'
 // ============================================================================
 
 /**
+ * @group Subnet APIs
  * CreateSubnet API 请求参数
  */
 interface CreateSubnetParams {

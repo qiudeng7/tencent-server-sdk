@@ -5,6 +5,7 @@ import type { TencentCloudCredential } from '#src/request'
 // ============================================================================
 
 /**
+ * @group Subnet APIs
  * 过滤器对象
  */
 interface Filter {

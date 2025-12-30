@@ -21,6 +21,7 @@ interface TerminateInstancesResponseData {
 /**
  * 退还（删除）云服务器实例
  *
+ * @group Instance APIs
  * @param credential - 腾讯云密钥凭证
  * @param instanceIds - 一个或多个待操作的实例ID
  * @param releasePrepaidDataDisks - 是否释放包年包月数据盘，默认 false

@@ -5,6 +5,7 @@ import type { TencentCloudCredential } from '#src/request'
 // ============================================================================
 
 /**
+ * @group VPC APIs
  * 删除私有网络（VPC）
  *
  * @param credential - 腾讯云密钥凭证

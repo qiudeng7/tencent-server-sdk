@@ -1,6 +1,7 @@
 import type { TencentCloudCredential } from '#src/request'
 
 /**
+ * @group Subnet APIs
  * 查看子网资源信息
  *
  * @param credential - 腾讯云密钥凭证

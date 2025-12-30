@@ -70,6 +70,7 @@ interface DescribeInstancesResponseData {
 /**
  * 查询云服务器实例列表
  *
+ * @group Instance APIs
  * @param credential - 腾讯云密钥凭证
  * @param params - 查询参数
  * @returns 包含 InstanceSet、TotalCount 和 RequestId 的对象

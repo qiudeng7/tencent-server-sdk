@@ -32,6 +32,7 @@ interface RunInstancesByTemplateResponseData {
 /**
  * 通过启动模板创建云服务器实例
  *
+ * @group Instance APIs
  * @param credential - 腾讯云密钥凭证
  * @param templateID - 启动模板 ID，默认 lt-0frkuglo
  * @param instanceCount - 购买实例数量，默认 1

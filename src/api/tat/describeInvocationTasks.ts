@@ -5,6 +5,7 @@ import type { TencentCloudCredential } from '#src/request'
 // ============================================================================
 
 /**
+ * @group TAT APIs
  * DescribeInvocationTasks API 请求参数
  */
 interface DescribeInvocationTasksParams {

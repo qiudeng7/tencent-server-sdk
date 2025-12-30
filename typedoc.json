@@ -24,5 +24,15 @@
   ],
   "theme": "default",
   "gitRevision": "main",
-  "categorizeByGroup": false
+  "categorizeByGroup": true,
+  "defaultCategory": "Other",
+  "categoryOrder": [
+    "K8s Helpers",
+    "Instance APIs",
+    "TAT APIs",
+    "VPC APIs",
+    "Subnet APIs",
+    "Types",
+    "*"
+  ]
 }

@@ -86,8 +86,9 @@ const DEFAULT_K8S_SERVER_CONFIG = {
 /**
  * 创建 K8s 服务器实例
  *
+ * @group K8s Helpers
  * 使用默认配置创建腾讯云服务器，同时允许用户通过传入 runInstances 参数覆盖默认配置
- * 
+ *
  * 默认配置是创建最便宜的竞价式服务器，并自动安装docker, kubelet,kubectl等，暂时并没有支持动态查询最便宜的服务器。
  *
  * @param credential - 腾讯云密钥凭证
