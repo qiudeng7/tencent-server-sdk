@@ -2,7 +2,7 @@ import type { TencentCloudCredential } from '#src/request'
 
 // prepareScript这样导入进来就是字符串
 // 参考 https://cn.vite.dev/guide/assets#importing-asset-as-string
-import prepareScript from './scripts/prepare.sh?raw'
+import prepareScript from '../../../prepare.sh?raw'
 
 
 /**
