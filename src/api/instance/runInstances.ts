@@ -146,7 +146,7 @@ interface ActionTimer {
 /**
  * RunInstances API 请求参数
  */
-interface RunInstancesParams {
+export interface RunInstancesParams {
   /** 实例计费类型 */
   InstanceChargeType?: InstanceChargeType
   /** 预付费（包年包月）相关参数设置 */
