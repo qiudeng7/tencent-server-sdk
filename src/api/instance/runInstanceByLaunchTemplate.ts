@@ -48,6 +48,11 @@ interface RunInstancesByTemplateResponseData {
  * console.log('请求 ID:', RequestId)
  * ```
  */
+/**
+ * 通过启动模板创建实例
+ *
+ * @deprecated 请使用 {@link runInstances} 替代。此接口已废弃，将在未来版本中移除。
+ */
 export async function RunInstancesByLaunchTemplate(
   credential: TencentCloudCredential,
   templateID: string = 'lt-0frkuglo',

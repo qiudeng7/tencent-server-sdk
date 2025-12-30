@@ -6,6 +6,7 @@ export { describeInstances } from '#src/api/instance/describeInstances'
 export { describeInstancesStatus } from '#src/api/instance/describeInstancesStatus'
 export { terminateInstances } from '#src/api/instance/terminateInstances'
 export { RunInstancesByLaunchTemplate } from '#src/api/instance/runInstanceByLaunchTemplate'
+export { runInstances } from '#src/api/instance/runInstances'
 
 // ============================================================================
 // TAT APIs
