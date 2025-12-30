@@ -68,13 +68,6 @@ const DEFAULT_K8S_SERVER_CONFIG = {
   DryRun: false
 }
 
-/**
- * 生成随机后缀
- */
-function generateSuffix(): string {
-  return Math.random().toString(36).substring(2, 8)
-}
-
 // ============================================================================
 // 函数实现
 // ============================================================================
@@ -145,17 +138,7 @@ export async function createK8sServers(
   const mergedParams = {
     ...DEFAULT_K8S_SERVER_CONFIG,
     ...params
-  } as any
-
-  // 如果用户指定了 InstanceName 且不包含腾讯云的随机后缀语法 {R:}，则添加随机后缀
-  if (params.InstanceName && !params.InstanceName.includes('{R:')) {
-    mergedParams.InstanceName = `${params.InstanceName}-${generateSuffix()}`
-  }
-
-  // 如果用户指定了 HostName 且不包含腾讯云的随机后缀语法 {R:}，则添加随机后缀
-  if (params.HostName && !params.HostName.includes('{R:')) {
-    mergedParams.HostName = `${params.HostName}-${generateSuffix()}`
-  }
+  } as RunInstancesParams
 
   // 调用 runInstances API
   return await runInstances(credential, mergedParams)
