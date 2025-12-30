@@ -27,6 +27,20 @@ export { deleteVpc } from '#src/api/vpc/deleteVpc'
 export { describeVpcs } from '#src/api/vpc/describeVpcs'
 
 // ============================================================================
+// Subnet APIs
+// ============================================================================
+
+export { createSubnet } from '#src/api/subnet/createSubnet'
+export { createSubnets } from '#src/api/subnet/createSubnets'
+export { deleteSubnet } from '#src/api/subnet/deleteSubnet'
+export { describeSubnets } from '#src/api/subnet/describeSubnets'
+export { modifySubnetAttribute } from '#src/api/subnet/modifySubnetAttribute'
+export { assignIpv6SubnetCidrBlock } from '#src/api/subnet/assignIpv6SubnetCidrBlock'
+export { unassignIpv6SubnetCidrBlock } from '#src/api/subnet/unassignIpv6SubnetCidrBlock'
+export { checkDefaultSubnet } from '#src/api/subnet/checkDefaultSubnet'
+export { describeSubnetResourceDashboard } from '#src/api/subnet/describeSubnetResourceDashboard'
+
+// ============================================================================
 // Types
 // ============================================================================
 
