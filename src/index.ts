@@ -2,25 +2,25 @@
 // Instance APIs
 // ============================================================================
 
-export { describeInstances } from './instance/describeInstances'
-export { describeInstancesStatus } from './instance/describeInstancesStatus'
-export { terminateInstances } from './instance/terminateInstances'
-export { RunInstancesByLaunchTemplate } from './instance/runInstanceByLaunchTemplate'
+export { describeInstances } from '#src/api/instance/describeInstances'
+export { describeInstancesStatus } from '#src/api/instance/describeInstancesStatus'
+export { terminateInstances } from '#src/api/instance/terminateInstances'
+export { RunInstancesByLaunchTemplate } from '#src/api/instance/runInstanceByLaunchTemplate'
 
 // ============================================================================
 // TAT APIs
 // ============================================================================
 
-export { createCommand } from './tat/createCommand'
-export { deleteCommand } from './tat/deleteCommand'
-export { describeCommands } from './tat/describeCommands'
-export { describeInvocations } from './tat/describeInvocations'
-export { describeInvocationTasks } from './tat/describeInvocationTasks'
-export { invokeCommand } from './tat/invokeCommand'
+export { createCommand } from '#src/api/tat/createCommand'
+export { deleteCommand } from '#src/api/tat/deleteCommand'
+export { describeCommands } from '#src/api/tat/describeCommands'
+export { describeInvocations } from '#src/api/tat/describeInvocations'
+export { describeInvocationTasks } from '#src/api/tat/describeInvocationTasks'
+export { invokeCommand } from '#src/api/tat/invokeCommand'
 
 // ============================================================================
 // Types
 // ============================================================================
 
-export type { TencentCloudCredential } from './utils/accessKey'
+export type { TencentCloudCredential } from '#src/types'
 

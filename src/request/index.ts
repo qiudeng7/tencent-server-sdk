@@ -4,20 +4,11 @@
  */
 
 import { sign } from './sign'
+import type { TencentCloudCredential } from '#src/types'
 
 // ============================================================================
 // 类型定义
 // ============================================================================
-
-/**
- * 腾讯云永久密钥凭证
- */
-interface TencentCloudCredential {
-  /** 密钥 ID，从腾讯云控制台获取 */
-  secretId: string
-  /** 密钥 Key，从腾讯云控制台获取 */
-  secretKey: string
-}
 
 /**
  * 腾讯云 API 请求配置
@@ -183,9 +174,11 @@ export function createRequest(
 // 导出类型
 // ============================================================================
 
-export type { 
-  TencentCloudCredential, 
-  TencentCloudRequestConfig, 
+export type {
+  TencentCloudRequestConfig,
   TencentCloudResponse,
-  TencentCloudRequestFunction 
+  TencentCloudRequestFunction
 }
+
+// 重新导出 TencentCloudCredential
+export type { TencentCloudCredential } from '#src/types'

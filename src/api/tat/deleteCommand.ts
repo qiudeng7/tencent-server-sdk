@@ -1,4 +1,4 @@
-import type { TencentCloudCredential } from '../utils/request'
+import type { TencentCloudCredential } from '#src/request'
 
 // ============================================================================
 // 类型定义
@@ -46,7 +46,7 @@ export async function deleteCommand(
   credential: TencentCloudCredential,
   commandId: string,
 ): Promise<{ RequestId: string }> {
-  const { createRequest } = await import('../utils/request')
+  const { createRequest } = await import('#src/request')
 
   // 创建请求函数
   const request = createRequest(credential)

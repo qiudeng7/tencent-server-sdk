@@ -1,4 +1,4 @@
-import type { TencentCloudCredential } from './utils/request'
+import type { TencentCloudCredential } from '#src/request'
 
 // ============================================================================
 // Types
@@ -136,7 +136,7 @@ export async function executeCommand(
   credential: TencentCloudCredential,
   params: ExecuteCommandParams,
 ): Promise<ExecutionResult> {
-  const { invokeCommand } = await import('./tat/invokeCommand')
+  const { invokeCommand } = await import('#src/api/tat/invokeCommand')
 
   const result = await invokeCommand(credential, {
     Content: base64Encode(params.content),
@@ -171,8 +171,8 @@ export async function getInvocationStatus(
   credential: TencentCloudCredential,
   invocationId: string,
 ): Promise<InvocationStatus> {
-  const { describeInvocations } = await import('./tat/describeInvocations')
-  const { describeInvocationTasks } = await import('./tat/describeInvocationTasks')
+  const { describeInvocations } = await import('#src/api/tat/describeInvocations')
+  const { describeInvocationTasks } = await import('#src/api/tat/describeInvocationTasks')
 
   // Query invocation
   const { InvocationSet } = await describeInvocations(credential, {

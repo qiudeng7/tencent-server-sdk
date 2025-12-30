@@ -1,4 +1,4 @@
-import type { TencentCloudCredential } from '../utils/request'
+import type { TencentCloudCredential } from '#src/request'
 
 // prepareScript这样导入进来就是字符串
 // 参考 https://cn.vite.dev/guide/assets#importing-asset-as-string
@@ -53,7 +53,7 @@ export async function RunInstancesByLaunchTemplate(
   templateID: string = 'lt-0frkuglo',
   instanceCount: number = 1,
 ): Promise<{ InstanceIdSet: string[]; RequestId: string }> {
-  const { createRequest } = await import('../utils/request')
+  const { createRequest } = await import('#src/request')
 
   // 创建请求函数
   const request = createRequest(credential)

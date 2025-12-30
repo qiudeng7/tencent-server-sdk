@@ -1,7 +1,7 @@
 {
   "name": "@qiudeng/tencent-cloud-sdk",
   "version": "0.0.1",
-  "description": "Tencent Cloud API SDK for CVM instances and TAT commands",
+  "description": "Tencent Cloud API SDK for k8s usage",
   "type": "module",
   "main": "./dist/tencent-cloud-sdk.cjs.js",
   "module": "./dist/tencent-cloud-sdk.es.js",

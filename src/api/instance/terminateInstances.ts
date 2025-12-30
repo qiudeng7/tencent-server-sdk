@@ -1,4 +1,4 @@
-import type { TencentCloudCredential } from '../utils/request'
+import type { TencentCloudCredential } from '#src/request'
 
 
 /**
@@ -45,7 +45,7 @@ export async function terminateInstances(
   instanceIds: string[],
   releasePrepaidDataDisks: boolean = false,
 ): Promise<{ RequestId: string }> {
-  const { createRequest } = await import('../utils/request')
+  const { createRequest } = await import('#src/request')
 
   // 创建请求函数
   const request = createRequest(credential)

@@ -1,4 +1,4 @@
-import type { TencentCloudCredential } from '../utils/request'
+import type { TencentCloudCredential } from '#src/request'
 
 // ============================================================================
 // 类型定义
@@ -76,7 +76,7 @@ export async function describeInstancesStatus(
   credential: TencentCloudCredential,
   params: DescribeInstancesStatusParams = {}
 ): Promise<{ InstanceStatusSet: InstanceStatus[]; TotalCount: number; RequestId: string }> {
-  const { createRequest } = await import('../utils/request')
+  const { createRequest } = await import('#src/request')
 
   // 创建请求函数
   const request = createRequest(credential)
