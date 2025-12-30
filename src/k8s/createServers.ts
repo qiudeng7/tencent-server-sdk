@@ -2,85 +2,85 @@ import type { TencentCloudCredential } from '#src/request'
 import { runInstances } from '#src/api/instance/runInstances'
 
 // ============================================================================
-// Type Definitions
+// 类型定义
 // ============================================================================
 
 /**
- * Default K8s server configuration
- * Extracted from src/k8s/createServerRef.js
+ * K8s 服务器的默认配置
+ * 从 src/k8s/createServerRef.js 中的 payload 提取
  */
 interface DefaultK8sServerConfig {
-  /** Instance charge type */
+  /** 实例计费类型 */
   InstanceChargeType: string
-  /** Instance placement */
+  /** 实例所在位置 */
   Placement: {
-    /** Availability zone */
+    /** 可用区 */
     Zone: string
   }
-  /** Instance type */
+  /** 实例机型 */
   InstanceType: string
-  /** Image ID */
+  /** 镜像 ID */
   ImageId: string
-  /** System disk configuration */
+  /** 系统盘配置 */
   SystemDisk: {
-    /** Disk type */
+    /** 系统盘类型 */
     DiskType: string
-    /** Disk size in GB */
+    /** 系统盘大小（GB） */
     DiskSize: number
   }
-  /** Instance name */
+  /** 实例名称 */
   InstanceName: string
-  /** Login settings */
+  /** 登录设置 */
   LoginSettings: {
-    /** Login password */
+    /** 登录密码 */
     Password: string
   }
-  /** Host name */
+  /** 主机名 */
   HostName: string
-  /** User data (base64 encoded) */
+  /** 用户数据（base64 编码） */
   UserData: string
-  /** Dry run flag */
+  /** 是否只预检请求 */
   DryRun: boolean
 }
 
 /**
- * Create K8s servers user parameters
- * Allow overriding parts of the default configuration
+ * 创建 K8s 服务器的用户配置
+ * 允许覆盖默认配置的部分字段
  */
 export interface CreateK8sServersParams {
-  /** Override default configuration */
+  /** 覆盖默认配置 */
   override?: Partial<DefaultK8sServerConfig>
-  /** Number of instances to create, default 1 */
+  /** 购买实例数量，默认为 1 */
   InstanceCount?: number
-  /** Availability zone, default ap-nanjing-1 */
+  /** 可用区，默认为 ap-nanjing-1 */
   Zone?: string
-  /** Instance name, will append random suffix */
+  /** 实例名称，会自动追加随机后缀 */
   InstanceName?: string
-  /** Host name, will append random suffix */
+  /** 主机名，会自动追加随机后缀 */
   HostName?: string
-  /** Login password */
+  /** 登录密码 */
   Password?: string
-  /** Other runInstances parameters */
+  /** 其他 runInstances 支持的参数 */
   [key: string]: any
 }
 
 /**
- * Create K8s servers result
+ * 创建 K8s 服务器的结果
  */
 export interface CreateK8sServersResult {
-  /** Instance ID list */
+  /** 实例 ID 列表 */
   InstanceIdSet: string[]
-  /** Request ID */
+  /** 请求 ID */
   RequestId: string
 }
 
 // ============================================================================
-// Default Configuration
+// 默认配置
 // ============================================================================
 
 /**
- * Default K8s server configuration
- * Extracted from src/k8s/createServerRef.js
+ * 默认的 K8s 服务器配置
+ * 从 src/k8s/createServerRef.js 提取
  */
 const DEFAULT_K8S_SERVER_CONFIG: DefaultK8sServerConfig = {
   InstanceChargeType: 'SPOTPAID',
@@ -98,45 +98,44 @@ const DEFAULT_K8S_SERVER_CONFIG: DefaultK8sServerConfig = {
     Password: '123456@ABC'
   },
   HostName: 'tencent-server-sdk-for-k8s',
-  UserData: 'TXlVc2VyRGF0YQo=', // base64 encoded "MyUserData"
+  UserData: 'TXlVc2VyRGF0YQo=', // base64 编码的 "MyUserData"
   DryRun: false
 }
 
 /**
- * Generate random suffix
+ * 生成随机后缀
  */
 function generateSuffix(): string {
   return Math.random().toString(36).substring(2, 8)
 }
 
 // ============================================================================
-// Function Implementation
+// 函数实现
 // ============================================================================
 
 /**
- * Create K8s server instances
+ * 创建 K8s 服务器实例
  *
- * Create Tencent Cloud servers with default configuration,
- * allow users to override parts of the configuration
+ * 使用默认配置创建腾讯云服务器，同时允许用户覆盖部分配置
  *
- * @param credential - Tencent Cloud credential
- * @param params - Creation parameters
- * @returns Object containing instance ID list and request ID
+ * @param credential - 腾讯云密钥凭证
+ * @param params - 创建参数
+ * @returns 包含实例 ID 列表和请求 ID 的对象
  *
  * @example
  * ```ts
  * import { createK8sServers } from '@qiudeng/tencent-cloud-sdk/k8s'
  *
- * // Create with default configuration
+ * // 使用默认配置创建
  * const result = await createK8sServers(credential, {
  *   InstanceCount: 3
  * })
- * console.log('Created instances:', result.InstanceIdSet)
+ * console.log('创建的实例:', result.InstanceIdSet)
  * ```
  *
  * @example
  * ```ts
- * // Override some configurations
+ * // 覆盖部分配置
  * const result = await createK8sServers(credential, {
  *   override: {
  *     InstanceType: 'S5.LARGE4',
@@ -149,7 +148,7 @@ function generateSuffix(): string {
  *
  * @example
  * ```ts
- * // Use custom password and instance name
+ * // 使用自定义密码和实例名
  * const result = await createK8sServers(credential, {
  *   Password: 'YourSecurePassword123!',
  *   InstanceName: 'my-k8s-node',
@@ -159,13 +158,13 @@ function generateSuffix(): string {
  *
  * @example
  * ```ts
- * // Fully customized configuration
+ * // 完全自定义配置
  * const result = await createK8sServers(credential, {
  *   override: {
  *     InstanceChargeType: 'POSTPAID_BY_HOUR',
  *     ImageId: 'img-xxxxxxxx'
  *   },
- *   // Can also add other runInstances parameters
+ *   // 还可以添加其他 runInstances 支持的参数
  *   VirtualPrivateCloud: {
  *     VpcId: 'vpc-xxxx',
  *     SubnetId: 'subnet-xxxx'
@@ -189,13 +188,13 @@ export async function createK8sServers(
     ...otherParams
   } = params
 
-  // Merge default configuration with user override
+  // 合并默认配置和用户覆盖配置
   let config: DefaultK8sServerConfig = {
     ...DEFAULT_K8S_SERVER_CONFIG,
     ...override
   }
 
-  // Override Zone if user specified
+  // 如果用户指定了 Zone，覆盖默认值
   if (Zone) {
     config = {
       ...config,
@@ -206,7 +205,7 @@ export async function createK8sServers(
     }
   }
 
-  // Append random suffix to InstanceName if user specified
+  // 如果用户指定了 InstanceName，添加随机后缀
   if (InstanceName) {
     config = {
       ...config,
@@ -214,7 +213,7 @@ export async function createK8sServers(
     }
   }
 
-  // Append random suffix to HostName if user specified
+  // 如果用户指定了 HostName，添加随机后缀
   if (HostName) {
     config = {
       ...config,
@@ -222,7 +221,7 @@ export async function createK8sServers(
     }
   }
 
-  // Override Password if user specified
+  // 如果用户指定了 Password，覆盖默认值
   if (Password) {
     config = {
       ...config,
@@ -233,13 +232,13 @@ export async function createK8sServers(
     }
   }
 
-  // Prepare final request parameters
+  // 准备最终的请求参数
   const finalParams = {
     ...config,
     InstanceCount,
     ...otherParams
   }
 
-  // Call runInstances API
+  // 调用 runInstances API
   return await runInstances(credential, finalParams as any)
 }
